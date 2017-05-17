@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View,
+  ScrollView,
   Text
 } from 'react-native';
 import AlbumDetail from './AlbumDetail';
@@ -23,18 +23,18 @@ class AlbumList extends Component {
 
   renderAlbums() {
     return this.state.albums.map(album =>
-      <AlbumDetail key={album.title} album={album}/>
+      <AlbumDetail key={album.title} album={album} />
     );
   }
 
   render() {
       return (
-      <View>
+      <ScrollView>
         {this.state.albums.length !== 0 ?
           this.renderAlbums() :
           <Text>Fetching album data...</Text>
         }
-      </View>
+      </ScrollView>
     );
   }
 }
